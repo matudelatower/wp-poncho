@@ -1,0 +1,21 @@
+{
+  "name": "wp-poncho",
+  "version": "1.0.0",
+  "description": "Base de html y css para la creación de sitios pertenecientes a la Administración Pública Nacional de la República Argentina. Adaptado a WordPress",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "matias.delatorre89@gmail.com",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matudelatower/wp-poncho.git"
+  },
+  "dependencies": {
+    "argob-poncho": "^0.3.4",
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0",
+    "jquery": "^1.12.4"
+  }
+}

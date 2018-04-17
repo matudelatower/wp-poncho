@@ -2,9 +2,11 @@
   "name": "wp-poncho",
   "version": "1.0.0",
   "description": "Base de html y css para la creación de sitios pertenecientes a la Administración Pública Nacional de la República Argentina. Adaptado a WordPress",
-  "main": "index.js",
+  "main": "webpack.config.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "./node_modules/.bin/webpack --env=\"development\" -w",
+    "prod": "./node_modules/.bin/webpack --env=\"production\""
   },
   "author": "matias.delatorre89@gmail.com",
   "license": "MIT",
@@ -17,5 +19,15 @@
     "bootstrap": "^3.3.7",
     "font-awesome": "^4.7.0",
     "jquery": "^1.12.4"
+  },
+  "devDependencies": {
+    "css-loader": "^0.28.11",
+    "file-loader": "^1.1.11",
+    "node-sass": "^4.8.3",
+    "sass-loader": "^6.0.7",
+    "style-loader": "^0.20.3",
+    "url-loader": "^1.0.1",
+    "webpack": "^3.11.0",
+    "webpack-notifier": "^1.5.1"
   }
 }

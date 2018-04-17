@@ -6,13 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title><?php wp_title( '' ) ?></title>
+    <title><?php bloginfo( 'title' ); ?></title>
 
     <meta name="description"
           content="Base de html y css para la creación de sitios pertenecientes a la Administración Pública Nacional de la República Argentina.">
 
     <meta name="author" content="Presidencia de la Nación">
-    <link rel="shortcut icon" href="http://argob.github.io/poncho/favicon.ico">
 
     <!-- Nav and address bar color -->
     <meta name="theme-color" content="#0072b8">
@@ -38,7 +37,13 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-                    <img alt="Brand" src="<?php echo get_stylesheet_directory_uri(); ?>/images/argentinagob.svg" height="50">
+	                <?php if ( has_custom_logo( 0 ) ) {
+		                echo get_custom_logo( 0 );
+	                } else {
+		                ?>
+                        <img alt="Brand" src="<?php echo get_stylesheet_directory_uri(); ?>/images/argentinagob.svg"
+                             height="50">
+	                <?php } ?>
                     <h1 class="sr-only"><?php bloginfo( 'name' ); ?>
                         <small><?php bloginfo( 'description' ); ?></small>
                     </h1>

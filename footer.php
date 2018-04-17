@@ -2,10 +2,15 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-6">
-                <img class="image-responsive" alt="Argentina.gob.ar - Presidencia de la Nación"
-                     src="<?php echo get_stylesheet_directory_uri(); ?>/images/argentinagob.svg">
+	            <?php if ( has_custom_logo( 0 ) ) {
+		            echo get_custom_logo( 0 );
+	            } else {
+		            ?>
+                    <img class="image-responsive" alt="Argentina.gob.ar - Presidencia de la Nación"
+                         src="<?php echo get_stylesheet_directory_uri(); ?>/images/argentinagob.svg">
+	            <?php } ?>
                 <br>
-                <p class="text-muted small">Los contenidos de Argentina.gob.ar están licenciados bajo <a
+                <p class="text-muted small">Los contenidos de <?php bloginfo( 'title' ); ?> están licenciados bajo <a
                             href="https://creativecommons.org/licenses/by/2.5/ar/">Creative Commons Reconocimiento
                         2.5 Argentina License</a></p>
             </div>

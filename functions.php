@@ -110,4 +110,7 @@ function poncho_pagination($pages = '', $range = 2)
 	}
 }
 
+if ( function_exists( 'add_theme_support' ) )
+	add_theme_support( 'post-thumbnails' );
+
 ?>

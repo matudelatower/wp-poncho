@@ -7,9 +7,6 @@
  * @since Twenty Sixteen 1.0
  */
 ?>
-<header class="page-header">
-    <h1 class="page-title">Resultados para: <span><?php echo get_search_query(); ?></span></h1>
-</header><!-- .page-header -->
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 

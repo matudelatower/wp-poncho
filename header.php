@@ -14,9 +14,9 @@
     <meta name="author" content="Presidencia de la Nación">
 
     <!-- Nav and address bar color -->
-    <meta name="theme-color" content="#0072b8">
-    <meta name="msapplication-navbutton-color" content="#0072b8">
-    <meta name="apple-mobile-web-app-status-bar-style" content="#0072b8">
+    <meta name="theme-color" content="<?php echo get_theme_mod('primary_color');?>">
+    <meta name="msapplication-navbutton-color" content="<?php echo get_theme_mod('primary_color');?>">
+    <meta name="apple-mobile-web-app-status-bar-style" content="<?php echo get_theme_mod('primary_color');?>">
 
 	<?php wp_head(); ?>
 

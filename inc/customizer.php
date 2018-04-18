@@ -25,6 +25,17 @@ function poncho_customize_register( $wp_customize ) {
 		) );
 	}
 
+	$wp_customize->add_setting( 'primary_color', array(
+		'default'           => $color_scheme[4],
+		'sanitize_callback' => 'sanitize_hex_color',
+		'transport'         => 'postMessage',
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'primary_color', array(
+		'label'       => 'Color Primario',
+		'section'     => 'colors',
+	) ) );
+
 	// Add color scheme setting and control.
 	$wp_customize->add_setting( 'color_scheme', array(
 		'default'           => 'default',
@@ -1662,6 +1673,7 @@ function poncho_extra_customize_register( $wp_customize ) {
 	$social_links = array(
 		'Facebook'   => 'poncho_facebook_text',
 		'Twitter'    => 'poncho_twitter_text',
+		'Instagram'    => 'poncho_instagram_text',
 		'GooglePlus' => 'poncho_googleplus_text',
 		'Pinterest'  => 'poncho_pinterest_text',
 		'YouTube'    => 'poncho_youtube_text',

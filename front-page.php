@@ -555,7 +555,7 @@
 
                                 <div class="social-share">
                                     <ul class="list-inline">
-                                        <li><a target="_blank" href="<?php echo $infinity_facebook_text; ?>"><i
+                                        <li><a target="_blank" href="<?php echo $poncho_facebook_text; ?>"><i
                                                         class="fa fa-facebook"></i></a></li>
                                         <li><a target="_blank" href="<?php echo $poncho_twitter_text; ?>"><i
                                                         class="fa fa-twitter "></i></a></li>

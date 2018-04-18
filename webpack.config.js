@@ -7,9 +7,7 @@ module.exports = function(env) {
         output: {
             path: path.resolve(__dirname, "dist"),
             filename: "bundle.js",
-            // publicPath: '/dist/'
-            // publicPath: path.relative('/dist','/wp-content/themes/poncho/dist') + '/'
-            publicPath: 'wp-content/themes/poncho/dist/'
+            publicPath: 'http://localhost/wordpress_test/wp-content/themes/poncho/dist/'
         },
         module: {
             loaders: [

@@ -1135,6 +1135,8 @@ function poncho_extra_customize_register( $wp_customize ) {
 	}
 
 
+
+
 	//	seccion links no destacados
 
 	$wp_customize->add_section(
@@ -1179,6 +1181,65 @@ function poncho_extra_customize_register( $wp_customize ) {
 			'type'    => 'text',
 		)
 	);
+
+//	$dropdown_args =
+//		array(
+//			'taxonomy'          => 'category',
+//			'show_option_none'  => ' ',
+//			'selected'          => null,
+//			'show_option_all'   => '',
+//			'orderby'           => 'id',
+//			'order'             => 'ASC',
+//			'show_count'        => 1,
+//			'hide_empty'        => 1,
+//			'child_of'          => 0,
+//			'exclude'           => '',
+//			'hierarchical'      => 1,
+//			'depth'             => 0,
+//			'tab_index'         => 0,
+//			'hide_if_empty'     => false,
+//			'option_none_value' => 0,
+//			'value_field'       => 'term_id',
+//		);
+
+    $aCategorias = [];
+
+	foreach ( get_categories() as $categories => $category ){
+		$aCategorias[$category->term_id] = $category->name;
+	}
+
+	$wp_customize->add_setting(
+		'seccion_links_no_destacados_categoria',
+		array(
+			'default'           => '',
+			'sanitize_callback' => '',
+		)
+	);
+	$wp_customize->add_control(
+		'seccion_links_no_destacados_categoria',
+		array(
+			'label'   => __( 'Categoría', 'poncho' ),
+			'section' => 'poncho_seccion_links_no_destacados',
+			'type'    => 'select',
+            'choices'=> $aCategorias
+		)
+	);
+
+	require_once get_stylesheet_directory() . '/inc/dropdown-categoria.php';
+
+//	$wp_customize->add_setting( 'seccion_links_no_destacados_categoria_dropdown', array(
+//		'default'           => '',
+//		'sanitize_callback' => 'absint',
+//	) );
+//	$wp_customize->add_control( new DropdownCategoria( $wp_customize, 'seccion_links_no_destacados_categoria_dropdown', array(
+//		'section'       => 'poncho_seccion_links_no_destacados',
+//		'label'         => esc_html__( 'Categoría', 'poncho' ),
+//		'description'   => esc_html__( 'Elegi una categoría para que sea mostrada en esta sección.', 'poncho' ),
+//		// Uncomment to pass arguments to wp_dropdown_categories()
+//		//'dropdown_args' => array(
+//		//	'taxonomy' => 'post_tag',
+//		//),
+//	) ) );
 
 	//	seccion links no destacados con descripcion
 
@@ -1225,6 +1286,21 @@ function poncho_extra_customize_register( $wp_customize ) {
 		)
 	);
 
+	$wp_customize->add_setting( 'seccion_links_no_destacados_con_descripcion_categoria', array(
+		'default'           => 0,
+		'sanitize_callback' => 'absint',
+	) );
+	$wp_customize->add_control( new DropdownCategoria( $wp_customize, 'seccion_links_no_destacados_con_descripcion_categoria', array(
+		'section'       => 'poncho_seccion_links_no_destacados_con_descripcion',
+		'label'         => esc_html__( 'Categoría', 'poncho' ),
+		'description'   => esc_html__( 'Elegi una categoría para que sea mostrada en esta sección.', 'poncho' ),
+		// Uncomment to pass arguments to wp_dropdown_categories()
+		//'dropdown_args' => array(
+		//	'taxonomy' => 'post_tag',
+		//),
+	) ) );
+
+
 	//	seccion links destacados con icono y descripcion
 
 	$wp_customize->add_section(
@@ -1270,6 +1346,37 @@ function poncho_extra_customize_register( $wp_customize ) {
 		)
 	);
 
+//	$wp_customize->add_setting(
+//		'seccion_links_destacados_con_icono_descripcion_categoria',
+//		array(
+//			'default'           => '',
+//			'sanitize_callback' => '',
+//		)
+//	);
+//	$wp_customize->add_control(
+//		'seccion_links_destacados_con_icono_descripcion_categoria',
+//		array(
+//			'label'   => __( 'Categoría', 'poncho' ),
+//			'section' => 'poncho_seccion_links_destacados_con_icono_descripcion',
+//			'type'    => 'select',
+//			'choices'=> $aCategorias
+//		)
+//	);
+
+	$wp_customize->add_setting( 'seccion_links_destacados_con_icono_descripcion_categoria', array(
+		'default'           => 0,
+		'sanitize_callback' => 'absint',
+	) );
+	$wp_customize->add_control( new DropdownCategoria( $wp_customize, 'seccion_links_destacados_con_icono_descripcion_categoria', array(
+		'section'       => 'poncho_seccion_links_destacados_con_icono_descripcion',
+		'label'         => esc_html__( 'Categoría', 'poncho' ),
+		'description'   => esc_html__( 'Elegi una categoría para que sea mostrada en esta sección.', 'poncho' ),
+		// Uncomment to pass arguments to wp_dropdown_categories()
+		//'dropdown_args' => array(
+		//	'taxonomy' => 'post_tag',
+		//),
+	) ) );
+
 	//	seccion Links destacados con fotos
 
 	$wp_customize->add_section(
@@ -1314,6 +1421,37 @@ function poncho_extra_customize_register( $wp_customize ) {
 			'type'    => 'text',
 		)
 	);
+
+//	$wp_customize->add_setting(
+//		'seccion_links_destacados_con_fotos_categoria',
+//		array(
+//			'default'           => '',
+//			'sanitize_callback' => '',
+//		)
+//	);
+//	$wp_customize->add_control(
+//		'seccion_links_destacados_con_fotos_categoria',
+//		array(
+//			'label'   => __( 'Categoría', 'poncho' ),
+//			'section' => 'poncho_seccion_links_destacados_con_fotos',
+//			'type'    => 'select',
+//			'choices'=> $aCategorias
+//		)
+//	);
+
+	$wp_customize->add_setting( 'seccion_links_destacados_con_fotos_categoria', array(
+		'default'           => 0,
+		'sanitize_callback' => 'absint',
+	) );
+	$wp_customize->add_control( new DropdownCategoria( $wp_customize, 'seccion_links_destacados_con_fotos_categoria', array(
+		'section'       => 'poncho_seccion_links_destacados_con_fotos',
+		'label'         => esc_html__( 'Categoría', 'poncho' ),
+		'description'   => esc_html__( 'Elegi una categoría para que sea mostrada en esta sección.', 'poncho' ),
+		// Uncomment to pass arguments to wp_dropdown_categories()
+		//'dropdown_args' => array(
+		//	'taxonomy' => 'post_tag',
+		//),
+	) ) );
 
 	//	seccion Noticias
 
